@@ -208,7 +208,7 @@ exp.submit = function() {
 		var dataForMTurk = jQuery('<input/>', {
 			type: 'hidden',
 			name: 'data',
-			value: flattenData(_.merge(exp.global_data, data))
+			value: JSON.stringify(flattenData(_.merge(exp.global_data, data)))
 		}).appendTo(form);
 		// MTurk expects a key 'assignmentId' for the submission to work,
 		// that is why is it not consistent with the snake case that the other keys have
