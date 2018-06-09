@@ -3,12 +3,17 @@ var intro = {
     // introduction title
     "title": "Welcome!",
     // introduction text
-    "text": "Thank you for participating in our study. We are interested in your judgements of the naturalness of English descriptions of abstract pictures (e.g. descriptions a computer may have generated). In this study, you will therefore see several trials, each with a picture of geometric shapes and a sentence.",
+    "text": "Thank you for participating in our study. We are interested in your judgements of the naturalness of English descriptions of abstract pictures (e.g. descriptions a computer may have generated). In this study, you will see 10 trials, each with a picture of geometric shapes and a sentence. ",
     // introduction's slide proceeding button text
     "buttonText": "Begin experiment",
     // render function renders the view
     render: function() {
-		var specific = exp.responseType == "slider" ? "<strong>Your task is to rate how well the sentence describes the picture using an adjustable slider.</strong>" : "<strong>Your task is to indicate whether the sentence is a true description of the picture by clicking on buttons labelled 'true' and 'false'.</strong>";
+		var specific = exp.responseType == "slider" ? 
+				"<strong> Your task is to rate how well the sentence describes the picture using an adjustable slider.</strong>" : 
+			exp.responseType == "slider" ?
+				"<strong> Your task is to indicate whether the sentence is an adequate description of the picture by clicking on buttons labelled 'inadequate' and 'adequate'.</strong>" :
+			exp.responseType == "rating" ?
+				"<strong> Your task is to indicate whether the sentence is an adequate description of the picture by choosing a value on a rating scale from 1 (inadequate) to 7 (adequate).</strong>";
         viewTemplate = $('#intro-view').html();
         $('#main').html(Mustache.render(viewTemplate, {
             title: this.title,
