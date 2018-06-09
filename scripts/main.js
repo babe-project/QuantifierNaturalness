@@ -54,7 +54,7 @@ exp.init = function(){
 	config_deploy.liveExperiment = config_deploy.deployMethod !== "debug";
 	config_deploy.prolificCode = '9BTAOPQD';
 	config_deploy.is_MTurk = config_deploy.MTurk_server !== "";
-	config_deploy.submissionURL = config_deploy.deployMethod == "localServer"? "http://localhost:4000/api/submit_experiment": "https://procomprag.herokuapp.com/api/submit_experiment"
+	config_deploy.submissionURL = config_deploy.deployMethod == "localServer"? "http://localhost:4000/api/submit_experiment/" + config_deploy.experimentID : "https://babe-backend.herokuapp.com/api/submit_experiment/" + config_deploy.experimentID;
 	console.log("deployMethod: " + config_deploy.deployMethod);
 	console.log("live experiment: " + config_deploy.liveExperiment);
 	console.log("runs on MTurk: " + config_deploy.is_MTurk);
@@ -141,8 +141,8 @@ exp.submit = function() {
 
 		for (var i = 0; i < trials.length; i++) {
 			var currentTrial = trials[i];
-			for (var trialKey in currentTrial) {
-				if (t.hasOwnProperty(trialKey)) {
+			for (var trialKey in t) {
+				if (currentTrial.hasOwnProperty(trialKey)) {
 					entry = String(currentTrial[trialKey])
 					output += "<td>" + entry.replace(/ /g, "&nbsp;") + "</td>";
 				}
