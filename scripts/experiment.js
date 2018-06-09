@@ -31,7 +31,7 @@ exp.customize = function() {
 
     // adds progress bars to the views listed
     // view's name coincides with object's name
-    this.progress_bar_in = ['mainForcedChoice', 'mainSliderRating'];
+    this.progress_bar_in = ['mainForcedChoice', 'mainSliderRating', 'mainRatingScale'];
     // styles: chunks, separate or default
     this.progress_bar_style = 'default';
     // the width of the progress bar or a single chunk
