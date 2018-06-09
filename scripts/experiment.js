@@ -6,27 +6,28 @@ exp.customize = function() {
     this.global_data.startTime = Date.now();
 
     // choose randomly between slider and forced response type
-    this.responseType = _.sample(["slider", "forced"])
-
+    this.responseType = _.sample(["slider", "forced", "rating"])
+	this.responseType = "rating"
     if (this.responseType === "slider") {
         // specify view order for slider type response
         this.views_seq = [intro,
-                          instructionsSliderRating,
-                          practiceSliderRating,
-                          beginMainExp,
                           mainSliderRating,
                           postTest,
                           thanks];
-    } else {
-        // specify view order for forced type response
+    } else if (this.responseType == "rating") {
+        // specify view order for rating type response
+		console.log("here")
         this.views_seq = [intro,
-                          instructionsForcedChoice,
-                          practiceForcedChoice,
-                          beginMainExp,
+                          mainRatingScale,
+                          postTest,
+                          thanks];
+    } else {
+		// specify view order for binary type response
+        this.views_seq = [intro,
                           mainForcedChoice,
                           postTest,
                           thanks];
-    }
+	}
 
     // adds progress bars to the views listed
     // view's name coincides with object's name

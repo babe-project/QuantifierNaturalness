@@ -3,9 +3,9 @@ var config_deploy = {
     // obligatory fields
 	
     // needed to recover data from server app
-    "author": "RandomJane",
+    "author": "MF",
     // needed to recover data from server app
-    "experiment_id": "MinimalTemplateDEMO", 
+    "experiment_id": "QuantifierNaturalness", 
     "description": "A minimal template for a browser-based experiment",
 
     // set deployment method; use one of:

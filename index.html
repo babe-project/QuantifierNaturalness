@@ -55,7 +55,7 @@
 			{{/ title }}
 			{{# text }}
 			<section class="text-container">
-				<p class="text">{{ text }}</p>
+				<p class="text">{{{ text }}}</p>
 			</section>
 			{{/ text }}
 			{{# button }}
@@ -111,7 +111,7 @@
 		</script>
 
 
-	        <!-- Practice view (slider response) -->
+	     <!-- Practice view (slider response) -->
 		<script id="practice-view-slider-response" type="x-tmpl-mustache">
 		<div class="view">
 		
@@ -127,7 +127,7 @@
 		
 		<p class="question">
 		{{# question }}
-		{{ question }}
+		{{{ question }}}
 		{{/ question }}
 		</p>
 
@@ -161,18 +161,20 @@
 			<p>progress</p>
 			<div class="progress-bar"><span id='filled'><span></div>
 		</div>
-		<div class="clearfix"></div>
-		
-		<div class="stimulus-container">
-		   <canvas id="canvas" height="400" width="600"></canvas>
-		</div>
-
 
 		<p class="question">
 		{{# question }}
 		{{ question }}
-		{{/ question }}
+		{{/ question }} 
+		<br>
+		{{# sentence }}
+		<strong>{{ sentence }}</strong>
+		{{/ sentence }}
 		</p>
+
+		<div class="stimulus-container">
+		   <canvas id="canvas" height="400" width="600"></canvas>
+		</div>
 
 		<p class="answer-container buttons-container">
 			<label for="yes" class="button-answer">{{ option1 }}</label>
@@ -184,56 +186,72 @@
 		</div>
 		</script>
 
-
-		<!-- Trial view (buttons response) -->
-		<script id="trial-view-buttons-response" type="x-tmpl-mustache">
+		<!-- Trial view (Likert-scale Rating) -->
+		<script id="trial-view-rating-response" type="x-tmpl-mustache">
 		<div class="view">
 		<div class="progress-bar-container">
 			<p>progress</p>
 			<div class="progress-bar"><span id='filled'><span></div>
 		</div>
-		<div class="clearfix"></div>
+
+		<p class="question">
+		{{# question }}
+		{{ question }}
+		{{/ question }} 
+		<br>
+		{{# sentence }}
+		<strong>{{ sentence }}</strong>
+		{{/ sentence }}
+		</p>
 
 		<div class="stimulus-container">
 		   <canvas id="canvas" height="400" width="600"></canvas>
 		</div>
 
-
-		<p class="question">
-		{{# question }}
-		{{ question }}
-		{{/ question }}
-		</p>
-
 		<p class="answer-container buttons-container">
-			<label for="yes" class="button-answer">{{ option1 }}</label>
-			<input type="radio" name="answer" id="yes" value={{ option1 }} />
-			<input type="radio" name="answer" id="no" value={{ option2 }} />
-			<label for="no" class="button-answer">{{option2}}</label>
+			inadequate
+			<label for="1" class="rating-answer">1</label>
+			<input type="radio" name="answer" id="1" value="1" />
+			<label for="2" class="rating-answer">2</label>
+			<input type="radio" name="answer" id="2" value="2" />
+			<label for="3" class="rating-answer">3</label>
+			<input type="radio" name="answer" id="3" value="3" />
+			<label for="4" class="rating-answer">4</label>
+			<input type="radio" name="answer" id="4" value="4" />
+			<label for="5" class="rating-answer">5</label>
+			<input type="radio" name="answer" id="5" value="5" />
+			<label for="6" class="rating-answer">6</label>
+			<input type="radio" name="answer" id="6" value="6" />
+			<label for="7" class="rating-answer">7</label>
+			<input type="radio" name="answer" id="7" value="7" />
+			adequate
 		</p>
 
 		</div>
 		</script>
-
-
-	        <!-- Trial view (slider response) -->
+		
+	     <!-- Trial view (slider response) -->
 		<script id="trial-view-slider-response" type="x-tmpl-mustache">
 		<div class="view">
 		<div class="progress-bar-container">
 			<p>progress</p>
 			<div class="progress-bar"><span id='filled'><span></div>
 		</div>
-		<div class="clearfix"></div>
+
+		<p class="question">
+		{{# question }}
+		{{ question }}
+		{{/ question }} 
+		<br>
+		{{# sentence }}
+		<strong>{{ sentence }}</strong>
+		{{/ sentence }}
+		</p>
 		
 		<div class="stimulus-container">
 		   <canvas id="canvas" height="400" width="600"></canvas>
 		</div>
 
-		<p class="question">
-		{{# question }}
-		{{ question }}
-		{{/ question }}
-		</p>
 
 		<p class="answer-container slider-container">
 			<span class="unnatural">{{ option1 }}</span>

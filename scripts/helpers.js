@@ -34,6 +34,7 @@ var generateTrial = function() {
 
     // generate canvas settings
     var trialInfo = {};
+	trialInfo.quantifier = _.sample(["Some", "All", "Most", "None", "A few", "Hardly any"])
     trialInfo.total_set_size = _.sample([10, 25, 50])
     trialInfo.focal_set_size = _.random(trialInfo.total_set_size)
     trialInfo.shape = _.sample(["circle", "square", "triangle"])
@@ -41,9 +42,9 @@ var generateTrial = function() {
     trialInfo.shape_size = 20
     trialInfo.focal_color = trialInfo.colors[0]
     trialInfo.other_color = trialInfo.colors[1]
-    trialInfo.question = "some of the " + trialInfo.shape + "s are " + trialInfo.focal_color
-    trialInfo.option1 = "false"
-    trialInfo.option2 = "true"
+    trialInfo.sentence = trialInfo.quantifier + " of the " + trialInfo.shape + "s are " + trialInfo.focal_color + "."
+    trialInfo.option1 = "inadequate"
+    trialInfo.option2 = "adequate"
 
     return trialInfo
 }

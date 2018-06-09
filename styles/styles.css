@@ -51,7 +51,7 @@ p {
     line-height: 27px;
     font-family: "Lato", "Noto Sans", sans-serif;
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 580px;
 }
 
 button {
@@ -141,13 +141,35 @@ button:focus {
     line-height: 20px;
     font-weight: 700;
     letter-spacing: 0.9px;
-    margin: 40px 5px 20px 5px;
+    margin: 30px 25px 20px 25px;
     outline: none;
     padding: 5px 10px;
     text-transform: uppercase;
 }
 
 .answer-container .button-answer:hover {
+    background-color: #324D93;
+}
+
+.answer-container .rating-answer {
+    background-color: #5187BA;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Lato", "Noto Sans", sans-serif;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    margin: 10px 5px 10px 5px;
+    outline: none;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.answer-container .rating-answer:hover {
     background-color: #324D93;
 }
 
