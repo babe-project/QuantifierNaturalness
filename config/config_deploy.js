@@ -15,7 +15,7 @@ var config_deploy = {
     // optional fields
     
     // who to contact in case of trouble
-    "contact_email": "YOUREMAIL@wherelifeisgreat.you", 
+    "contact_email": "exprag@gmail.com", 
 };
 
 
