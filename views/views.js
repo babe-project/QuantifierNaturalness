@@ -10,10 +10,11 @@ var intro = {
     render: function() {
 		var specific = exp.responseType == "slider" ? 
 				"<strong> Your task is to rate how well the sentence describes the picture using an adjustable slider.</strong>" : 
-			exp.responseType == "slider" ?
+			exp.responseType == "forced" ?
 				"<strong> Your task is to indicate whether the sentence is an adequate description of the picture by clicking on buttons labelled 'inadequate' and 'adequate'.</strong>" :
 			exp.responseType == "rating" ?
-				"<strong> Your task is to indicate whether the sentence is an adequate description of the picture by choosing a value on a rating scale from 1 (inadequate) to 7 (adequate).</strong>";
+				"<strong> Your task is to indicate whether the sentence is an adequate description of the picture by choosing a value on a rating scale from 1 (inadequate) to 7 (adequate).</strong>" : 
+				"<strong> Your task is to judge the adequacy of sentences given a picture.</strong>";
         viewTemplate = $('#intro-view').html();
         $('#main').html(Mustache.render(viewTemplate, {
             title: this.title,

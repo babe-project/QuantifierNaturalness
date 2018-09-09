@@ -7,7 +7,6 @@ exp.customize = function() {
 
     // choose randomly between slider and forced response type
     this.responseType = _.sample(["slider", "forced", "rating"])
-	this.responseType = "rating"
     if (this.responseType === "slider") {
         // specify view order for slider type response
         this.views_seq = [intro,
